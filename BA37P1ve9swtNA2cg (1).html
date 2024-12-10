@@ -1,0 +1,290 @@
+<html><head><base href="https://supremewarez.com/">
+<title>SUPREMEWAREZ - Scripts Community</title>
+<style>
+:root {
+  --neon-blue: #00f3ff;
+  --neon-purple: #9d00ff;
+  --dark-bg: #0a0a0a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+  background: var(--dark-bg);
+  color: white;
+  overflow-x: hidden;
+}
+
+.cyber-nav {
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2.5em;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(157,0,255,0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.language-selector {
+  background: rgba(255,255,255,0.1);
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--neon-blue);
+  color: white;
+  cursor: pointer;
+}
+
+.language-selector:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--neon-purple);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.cyber-grid {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(transparent 95%, var(--neon-blue) 95%),
+    linear-gradient(90deg, transparent 95%, var(--neon-purple) 95%);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.8);
+  border-radius: 15px;
+}
+
+.main-content {
+  line-height: 1.6;
+  margin-top: 2rem;
+}
+
+.section {
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid var(--neon-blue);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--neon-purple);
+}
+
+.fire-text {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fireAnimation 3s ease-in-out infinite;
+  font-weight: bold;
+}
+
+.content-section {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid var(--neon-blue);
+  transition: all 0.3s ease;
+}
+
+.content-section:hover {
+  box-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+
+.section-title {
+  font-size: 1.8em;
+  margin-bottom: 1rem;
+  color: #ff6600;
+  text-shadow: 0 0 10px rgba(255,102,0,0.5);
+}
+
+.neon-title {
+  font-size: 1.5em;
+  color: #ff6600;
+  text-shadow: 0 0 10px rgba(255,102,0,0.5);
+  margin: 1.5rem 0;
+  animation: fireAnimation 3s ease-in-out infinite;
+}
+
+ul {
+  list-style-position: inside;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+@keyframes fireAnimation {
+  0% { background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00); -webkit-background-clip: text; }
+  33% { background: linear-gradient(45deg, #ff6600, #ffcc00, #ff0000); -webkit-background-clip: text; }
+  66% { background: linear-gradient(45deg, #ffcc00, #ff0000, #ff6600); -webkit-background-clip: text; }
+  100% { background: linear-gradient(45deg, #ff0000, #ff6600, #ffcc00); -webkit-background-clip: text; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px var(--neon-purple); }
+  to { text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-purple); }
+}
+
+@keyframes gridMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(50px); }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+<nav class="cyber-nav">
+  <div class="logo">SUPREMEWAREZ</div>
+  <select class="language-selector" id="langSelect">
+    <option value="es">Español</option>
+    <option value="en">English</option>
+    <option value="pt">Português</option>
+  </select>
+</nav>
+
+<div class="hero">
+  <div class="cyber-grid"></div>
+  <div class="floating-particles" id="particles"></div>
+  <div class="content">
+    <h1 class="fire-text">Bienvenido a SupremeWareZ</h1>
+    
+    <div class="content-section">
+      <p>¡Bienvenido a SupremeWareZ, tu comunidad de scripts de Roblox Murder Mystery 2!</p>
+      
+      <h2 class="neon-title">Descubre el poder de los scripts de la comunidad</h2>
+      <p>Nuestra comunidad de desarrolladores y usuarios ha creado una amplia variedad de scripts para mejorar tu experiencia en Murder Mystery 2. Estos scripts son códigos simples y seguros que no requieren instalación, así que puedes empezar a disfrutar de ellos de inmediato.</p>
+      
+      <h2 class="neon-title">¿Qué son los scripts?</h2>
+      <p>Los scripts son secuencias de comandos que pueden ser ejecutados en el juego para obtener ventajas, acceder a contenido exclusivo o simplemente para divertirte. Nuestros scripts están diseñados para ser fáciles de usar y no requieren conocimientos técnicos avanzados.</p>
+      
+      <h2 class="neon-title">Murder Mystery 2: el juego de moda</h2>
+      <p>Murder Mystery 2 es uno de los juegos más populares de Roblox, y por buena razón. Su emocionante gameplay y su gran comunidad de jugadores lo han convertido en un clásico instantáneo. Ahora, con nuestros scripts, puedes llevar tu experiencia en el juego al siguiente nivel.</p>
+      
+      <h2 class="neon-title">Scripts exclusivos y actualizados</h2>
+      <p>Nuestra comunidad de desarrolladores trabaja incansablemente para crear contenido de alta calidad que te permita disfrutar del juego de manera única. Nuestros scripts están constantemente actualizados para asegurarte que siempre tengas acceso a los mejores trucos y ventajas.</p>
+      
+      <h2 class="neon-title">Sin necesidad de instalar nada</h2>
+      <p>Nuestros scripts no requieren instalación, así que puedes empezar a usarlos de inmediato. Simplemente copia y pega el código en el juego y listo.</p>
+      
+      <h2 class="neon-title">Keys y contenido exclusivo</h2>
+      <p>Además de nuestros scripts, también ofrecemos keys y contenido exclusivo para que puedas acceder a características y objetos especiales en el juego.</p>
+      
+      <h2 class="neon-title">Comunidad activa y soporte</h2>
+      <p>Nuestra comunidad de usuarios es muy activa y siempre está dispuesta a ayudar. Si tienes alguna pregunta o necesitas soporte, no dudes en preguntar. Recuerda que nuestra comunidad se basa en el respeto mutuo y la amabilidad.</p>
+      
+      <h2 class="neon-title">Normas de la comunidad</h2>
+      <ul>
+        <li>No toleramos la toxicidad ni la discriminación en nuestra comunidad.</li>
+        <li>Respetamos los derechos de autor y las políticas de Roblox.</li>
+        <li>No compartimos contenido inapropiado ni dañino.</li>
+        <li>Siempre estamos dispuestos a ayudar y apoyar a los demás.</li>
+      </ul>
+      
+      <h2 class="neon-title">Descarga ahora y comienza a disfrutar</h2>
+      <p>¿Qué estás esperando? Descarga ahora nuestros scripts y comienza a disfrutar de Murder Mystery 2 como nunca antes. ¡Registra ahora y únete a la comunidad SupremeWareZ!</p>
+      
+      <h2 class="neon-title">Términos y condiciones</h2>
+      <p>Recuerda leer nuestros términos y condiciones antes de utilizar nuestros scripts. Asegúrate de utilizarlos de manera responsable y respetar las políticas de Roblox.</p>
+      
+      <h2 class="neon-title">Agradecimientos</h2>
+      <p>Agradecemos a nuestra comunidad de desarrolladores y usuarios por su dedicación y esfuerzo en crear contenido de alta calidad. Sin su ayuda, no seríamos lo que somos hoy. ¡Gracias por ser parte de SupremeWareZ!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+particlesJS('particles', {
+  particles: {
+    number: { value: 80 },
+    color: { value: '#00f3ff' },
+    shape: { type: 'circle' },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: 'none',
+      random: true
+    }
+  }
+});
+
+const langSelect = document.getElementById('langSelect');
+const translateElements = document.querySelectorAll('[data-en]');
+
+function translatePage(lang) {
+  translateElements.forEach(element => {
+    if (element.getAttribute(`data-${lang}`)) {
+      element.textContent = element.getAttribute(`data-${lang}`);
+    }
+  });
+}
+
+langSelect.addEventListener('change', (e) => {
+  translatePage(e.target.value);
+});
+
+// Initialize with Spanish
+translatePage('es');
+
+document.querySelectorAll('.feature-card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    card.style.setProperty('--x', `${x}px`);
+    card.style.setProperty('--y', `${y}px`);
+  });
+});
+</script>
+</body>
+</html>
